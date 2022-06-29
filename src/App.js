@@ -1,13 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
-import Loader from './components/Loader';
+import PDFReader from '../src/components/PDFReader';
 
 function App() {
   
   return (
     <div className="App">
-      <Loader/>
+      <PDFReader />
     </div>
   );
 }

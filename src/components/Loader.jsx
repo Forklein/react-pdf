@@ -1,10 +1,17 @@
 import React from "react";
 
-const Loader = () => {
+const Loader = (props) => {
+  const { isLoading } = props;
+  console.log(isLoading);
+  if (!isLoading) return null;
   return (
     <div id="loader">
-      <img src="https://react-pdf.org/images/logo.png" alt="loader"></img>
-      <p>Loading...</p>
+      <img
+        src="https://react-pdf.org/images/logo.png"
+        alt="loader"
+        className="mb-5"
+      ></img>
+      <strong>LOADING...</strong>
     </div>
   );
 };

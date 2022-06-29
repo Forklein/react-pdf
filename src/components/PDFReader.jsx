@@ -19,7 +19,7 @@ const PDFReader = () => {
       <Loader isLoading={isLoading} />
 
       <Document
-        file="/assets/pdf/lorem.pdf"
+        file="/assets/pdf/example.pdf"
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={pageNumber} />

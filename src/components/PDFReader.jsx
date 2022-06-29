@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import ControlPanel from "./ControlPanel";
 import Loader from "./Loader";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -14,17 +15,21 @@ const PDFReader = () => {
   }
 
   return (
-    <div>
+    <div className="text-center">
       <Loader isLoading={isLoading} />
+
       <Document
         file="/assets/pdf/lorem.pdf"
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={pageNumber} />
       </Document>
-      <p>
-        Page {pageNumber} of {numPages}
-      </p>
+
+      <ControlPanel
+        pageNumber={pageNumber}
+        numPages={numPages}
+        setPageNumber={setPageNumber}
+      />
     </div>
   );
 };

@@ -2,7 +2,6 @@ import React from "react";
 
 const Loader = (props) => {
   const { isLoading } = props;
-  console.log(isLoading);
   if (!isLoading) return null;
   return (
     <div id="loader">
